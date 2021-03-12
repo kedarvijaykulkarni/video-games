@@ -3,6 +3,8 @@
 module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'video-games',
+    // namespaced directory where resolver will look for your resource files
+    podModulePrefix: 'video-games/pods',
     environment,
     rootURL: '/',
     locationType: 'auto',

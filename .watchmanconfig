@@ -1,3 +1,10 @@
 {
-  "ignore_dirs": ["tmp", "dist"]
+  "ignore_dirs": [
+    "tmp",
+    "dist",
+    "deploy",
+    "bower_components",
+    "vendor",
+    "node_modules"
+  ]
 }
