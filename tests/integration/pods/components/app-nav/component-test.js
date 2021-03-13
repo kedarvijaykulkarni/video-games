@@ -3,6 +3,7 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render, find } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 // import { pauseTest } from '@ember/test-helpers';
+// await pauseTest()
 
 module('Integration | Component | app-nav', function(hooks) {
   setupRenderingTest(hooks);
@@ -10,20 +11,22 @@ module('Integration | Component | app-nav', function(hooks) {
   test('it renders', async function(assert) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
-
     await render(hbs`<AppNav />`);
+    assert.equal(this.element.querySelector('span[data-link="index"]').textContent.trim(), 'Home');
+    assert.equal(this.element.querySelector('span[data-link="video-games"]').textContent.trim(), 'Video Games');
+  });
 
-    assert.equal(this.element.textContent.trim(), 'Home');
-
-    // Template block usage:
-    await render(hbs`
-       {{#app-nav}}
-        template block text
-      {{/app-nav}}
-    `);
-
+  test('Component have link home', async function(assert) {
+    await render(hbs`<AppNav />`);
     // await pauseTest()
-
     assert.ok(find('[data-link="index"]'), 'link to Home is present');
   });
+
+  test('Component have link video-games', async function(assert) {
+    await render(hbs`<AppNav />`);
+    assert.ok(find('[data-link="video-games"]'), 'link to Video Games is present');
+  });
+
+
+
 });

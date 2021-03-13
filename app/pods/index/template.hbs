@@ -1,7 +1,8 @@
-<div class="flex items-center full-height w-100">
+<div class="flex items-center full-height w-100 bg-white">
   <div class="w-100 pa3 mr2 h4">
-    <code><h1 class="tc">Welcome</h1></code>
-    <p class="tc">Checkout latest {{#link-to "index" class="dib"}} video games {{/link-to}} ...</p>
+    <code><h1 class="tc" data-test="welcome-header">Welcome</h1></code>
+    <p class="tc" data-link="video-games">Checkout {{#link-to "video-games" class="dib"}}<span data-link="video-games">video games</span>{{/link-to}} ...</p>
     {{outlet}}
+    <p class="tc">Checkout <a href="/tests?dockcontainer" target="_blank" rel="noopener" data-link="tests">Application test cases</a> ...</p>
   </div>
 </div>

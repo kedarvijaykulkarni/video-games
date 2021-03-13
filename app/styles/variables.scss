@@ -3,13 +3,13 @@
 $white: #fff !default;
 $body-color: custom-color("custom-grey", "lighten-1") !default;
 
-$link-color: custom-color("custom-blue", "base") !default;
+$link-color: #2d4149 !default;
 
 $primary-color: custom-color("custom-grey", "base") !default;
 $primary-color-light: lighten($primary-color, 15%) !default;
 $primary-color-dark: darken($primary-color, 15%) !default;
 
-$secondary-color: custom-color("custom-red", "darken-1") !default;
+$secondary-color: custom-color("custom-cyan", "darken-1") !default;
 
 $success-color: color("green", "base") !default;
 $error-color: custom-color("custom-red", "base") !default;

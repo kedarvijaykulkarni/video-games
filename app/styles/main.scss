@@ -32,17 +32,13 @@ a {
   color: $link-color;
   text-decoration: underline;
   &:hover, &:visited, &:active {
-    color: custom-color("custom-blue", "darken-4");
     text-decoration: none;
   }
 }
 
-.link {
-  &:hover {
-    background-color: custom-color("custom-blue", "lighten-1");
-  }
+.bg-white {
+  background-color: $white;
 }
-
 
 .full-height {
   height: calc(100vh - 65px)
