@@ -14,9 +14,48 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `git clone <repository-url>` this repository
+* `git clone https://github.com/kedarvijaykulkarni/video-games.git` this repository
 * `cd video-games`
 * `npm install`
+
+
+* HTTP
+
+### …or create a new repository on the command line
+
+echo "# video-games" >> README.md
+* `git init`
+* `git add README.md`
+* `git commit -m "first commit"`
+* `git branch -M main`
+* `git remote add origin https://github.com/kedarvijaykulkarni/video-games.git`
+* `git push -u origin main`
+
+### …or push an existing repository from the command line
+
+* `remote add origin https://github.com/kedarvijaykulkarni/video-games.git`
+* `branch -M main`
+* `push -u origin main`
+
+
+* SSH
+
+### …or create a new repository on the command line
+
+* `echo "# video-games" >> README.md`
+* `init`
+* `add README.md`
+* `commit -m "first commit"`
+* `branch -M main`
+* `remote add origin git@github.com:kedarvijaykulkarni/video-games.git`
+* `push -u origin main`
+
+### …or push an existing repository from the command line
+* `remote add origin git@github.com:kedarvijaykulkarni/video-games.git`
+* `branch -M main`
+* `push -u origin main`
+
+
 
 ## Running / Development
 
