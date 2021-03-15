@@ -1,7 +1,7 @@
 import Route from '@ember/routing/route';
 import RSVP from 'rsvp';
 import { isEmpty } from '@ember/utils';
-import moment from 'moment';
+// import moment from 'moment';
 
 export default Route.extend({
   // queryParams: {
@@ -16,7 +16,7 @@ export default Route.extend({
     });
     return RSVP.hash({
       genres,
-      query: param,
+      query: param, // just added if we use server side sorting
       results: this.getAllGames(param),
     });
   },
@@ -29,11 +29,7 @@ export default Route.extend({
           game.genre = genreName[0].name;
         }
         game.releaseDate =
-          game.releaseDate != 'Invalid Date'
-            ? moment(new Date(game.releaseDate), 'YYYY-MM-DD').format(
-                'DD-MM-YYYY'
-              )
-            : '-';
+          game.releaseDate != 'Invalid Date' ? new Date(game.releaseDate) : '-';
       });
     });
 

@@ -1,0 +1,36 @@
+<thead>
+  <tr>
+    {{#each headers as |header|}}
+      {{list-video-games-table/th-button 
+        title=header.title
+        className=header.className
+        sortField=header.sortfield
+        isSortedAsc=isSortedAsc
+        isSortable=header.isSortable
+        sortData=(action "sortData")
+      }}
+    {{/each}}
+    <th data-text="th-action">&nbsp;</th>
+  </tr>
+</thead>
+<tbody>
+  {{#each dataSorted as |game|}}
+    <tr>
+      <td data-test="td-title">{{game.title}}</td>
+      <td data-test="td-genre">{{game.genre}}</td>
+      <td data-test="td-tags">
+        {{#each game.tags as |tag|}}
+          <span class="tag">{{tag}}</span>
+        {{/each}}
+      </td>
+      <td data-test="td-release-date">{{moment-format game.releaseDate "DD-MM-YYYY"}}</td>
+
+      <td data-test="td-price" align="right">{{game.price}}</td>
+      <td data-test="td-action" align="center"> 
+        <button class="btn btn-flat" {{action "deleteGame" game}}>
+          <i class="material-icons">delete</i>
+        </button>
+      </td>
+    </tr>
+  {{/each}}
+</tbody>
