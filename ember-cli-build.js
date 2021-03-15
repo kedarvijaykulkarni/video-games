@@ -10,6 +10,9 @@ module.exports = function(defaults) {
       includePaths: [
         'node_modules/tachyons-sass'
       ]
+    },
+    'ember-cli-babel': {
+      includePolyfill: true
     }
   });
 

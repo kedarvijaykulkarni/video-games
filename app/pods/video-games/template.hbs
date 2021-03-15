@@ -1,3 +1,36 @@
-{{outlet}}
+<div class="flex full-height w-100 bg-white">
+  <div class="w-100 pa3 mr2 h4">
+    {{outlet}}
+    <table width="100%" cellpadding="0" cellspacing="0" border="1">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>GenreId</th>
+          <th>Genre</th>
+          <th>Tags</th>
+          <th>Release date</th>
+          <th>Price</th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each model.results as |game|}}
+          <tr>
+            <td>{{game.title}}</td>
+            <td>{{game.genreId}}</td>
+            <td>{{game.genre}}</td>
+            <td>
+              {{#each game.tags as |tag|}}
+                <span>{{tag}}</span>
+              {{/each}}
+            </td>
+            <td>{{game.releaseDate}}</td>
+            <td align="right">{{game.price}}</td>
+            <td> <i class="material-icons">delete</i> </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
 
-video games table
+  </div>
+</div>

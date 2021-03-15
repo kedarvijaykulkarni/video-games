@@ -1,0 +1,25 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "type": "genre",
+      "attributes": {
+        "name": "RPG"
+      }
+    },
+    {
+      "id": 2,
+      "type": "genre",
+      "attributes": {
+        "name": "Adventure"
+      }
+    },
+    {
+      "id": 3,
+      "type": "genre",
+      "attributes": {
+        "name": "Action"
+      }
+    }
+  ]
+}
