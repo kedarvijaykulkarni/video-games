@@ -4,7 +4,6 @@ import { isEmpty } from '@ember/utils';
 import moment from 'moment';
 
 export default Route.extend({
-
   // queryParams: {
   //   orderBy: null
   // },
@@ -18,19 +17,23 @@ export default Route.extend({
     return RSVP.hash({
       genres,
       query: param,
-      results: this.getAllGames(param)
-    })
-
+      results: this.getAllGames(param),
+    });
   },
 
   async getAllGames(/*param*/) {
     return this.store.findAll('video-game').then((results) => {
-      return results.forEach((game)=> {
+      return results.forEach((game) => {
         const genreName = this.genres.filter((g) => game.genreId == g.id);
-        if(!isEmpty(genreName)) {
+        if (!isEmpty(genreName)) {
           game.genre = genreName[0].name;
         }
-        game.releaseDate = moment(game.releaseDate).format('DD-MM-YYYY');
+        game.releaseDate =
+          game.releaseDate != 'Invalid Date'
+            ? moment(new Date(game.releaseDate), 'YYYY-MM-DD').format(
+                'DD-MM-YYYY'
+              )
+            : '-';
       });
     });
 
@@ -80,5 +83,5 @@ export default Route.extend({
         }
       });
     */
-  }
+  },
 });
