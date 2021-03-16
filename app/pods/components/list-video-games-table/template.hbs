@@ -17,7 +17,7 @@
   {{#each dataSorted as |game|}}
     <tr>
       <td data-test="td-title">{{game.title}}</td>
-      <td data-test="td-genre">{{game.genre}}</td>
+      <td data-test="td-genre" align="center">{{game.genre}}</td>
       <td data-test="td-tags">
         {{#each game.tags as |tag|}}
           <span class="tag">{{tag}}</span>

@@ -31,7 +31,7 @@ export default Component.extend({
         sortfield: 'title',
         isSortable: true,
         isShow: true,
-        className: ['p-a-0'],
+        className: ['p-a-0 tl'],
       },
       {
         title: 'Genre',
@@ -45,14 +45,14 @@ export default Component.extend({
         sortfield: 'tags',
         isSortable: false,
         isShow: true,
-        className: ['p-a-0'],
+        className: ['p-a-0 tl'],
       },
       {
         title: 'Release date',
         sortfield: 'releaseDate',
         isSortable: true,
         isShow: true,
-        className: ['p-a-0'],
+        className: ['p-a-0 tl'],
       },
       {
         title: 'Price',
