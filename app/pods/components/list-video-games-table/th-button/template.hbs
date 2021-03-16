@@ -3,13 +3,13 @@
     data-test-sort={{sortField}}
     class="btn btn-flat {{if isSortedAsc "is-ascending" "is-descending"}}"
     {{action "sortData" sortField}}>
-      <i class="icon"></i>{{title}}
+    <i class="icon"></i>{{title}}
   </button>
 {{else}}
   <button
     data-test-sort={{sortField}}
     class="btn btn-flat {{if isSortedAsc "is-ascending" "is-descending"}}">
-      <i class="icon no-sort"></i>{{title}}
+    <i class="icon no-sort"></i>{{title}}
   </button>
 {{/if}}
 
