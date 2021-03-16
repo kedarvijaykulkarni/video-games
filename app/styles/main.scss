@@ -63,4 +63,9 @@ a {
     color: inherit;
     cursor: pointer;
   }
+  &.delete {
+    &:hover {
+      color: $error-color;
+    }
+  }
 }

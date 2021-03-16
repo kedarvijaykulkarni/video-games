@@ -24,10 +24,9 @@
         {{/each}}
       </td>
       <td data-test="td-release-date">{{moment-format game.releaseDate "DD-MM-YYYY"}}</td>
-
-      <td data-test="td-price" align="right">{{game.price}}</td>
+      <td data-test="td-price" align="right"><EuroFormater @amount={{game.price}}/></td>
       <td data-test="td-action" align="center"> 
-        <button class="btn btn-flat" {{action "deleteGame" game}}>
+        <button class="btn btn-flat delete" title="Delete record" {{action "deleteGame" game}}>
           <i class="material-icons">delete</i>
         </button>
       </td>
