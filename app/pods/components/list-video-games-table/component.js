@@ -5,6 +5,9 @@ import { isEmpty } from '@ember/utils';
 export default Component.extend({
   tagName: 'table',
   classNames: ['list-video-games-table', 'table'],
+  attributeBindings: ['dataTest:data-test'],
+
+  dataTest: 'test-list-video-games-table',
 
   orderBy: null,
 
