@@ -1,0 +1,11 @@
+<div class="flex full-height w-100 bg-white">
+  <div class="w-100 pa3 mr2 h4">
+    {{outlet}}
+    <h1 data-test="table-title">Video Games</h1>
+    <ListVideoGamesTable 
+      @data={{model.results}}
+      @query={{model.query}}
+      @deleteRecord={{action "deleteRecord"}}
+    />
+  </div>
+</div>

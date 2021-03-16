@@ -9,7 +9,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.43;
@@ -24,26 +24,48 @@ body {
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Arial', sans-serif;
   font-weight: 400;
 }
 
 a {
   color: $link-color;
   text-decoration: underline;
-  &:hover, &:visited, &:active {
-    color: custom-color("custom-blue", "darken-4");
+  &:hover,
+  &:visited,
+  &:active {
     text-decoration: none;
   }
 }
 
-.link {
-  &:hover {
-    background-color: custom-color("custom-blue", "lighten-1");
-  }
+.bg-white {
+  background-color: $white;
 }
 
-
 .full-height {
-  height: calc(100vh - 65px)
+  height: calc(100vh - 65px);
+}
+
+.btn {
+  &.btn-flat {
+    background: none;
+    box-shadow: none;
+    border: 0;
+    font-weight: 500;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    cursor: pointer;
+  }
+  &.delete {
+    &:hover {
+      color: $error-color;
+    }
+  }
 }
