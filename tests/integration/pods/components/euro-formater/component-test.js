@@ -3,24 +3,23 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 
-module('Integration | Component | euro-formater', function(hooks) {
+module('Integration | Component | euro-formater', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders', async function(assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
+  test('EURO formating it renders', async function (assert) {
+    await render(hbs`<EuroFormater @amount={{0}}/>`);
+    assert.equal(this.element.textContent.trim(), '0,00€');
+  });
 
-    await render(hbs`<EuroFormater />`);
+  test('EURO formating test with two digit', async function (assert) {
+    // test with two digit
+    await render(hbs`<EuroFormater @amount={{16.79}} />`);
+    assert.equal(this.element.textContent.trim(), '16,79€');
+  });
 
-    assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      <EuroFormater>
-        template block text
-      </EuroFormater>
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
+  test('EURO formating test with five digit', async function (assert) {
+    // test with two digit
+    await render(hbs`<EuroFormater @amount={{10135.79}} />`);
+    assert.equal(this.element.textContent.trim(), '10.135,79€');
   });
 });
